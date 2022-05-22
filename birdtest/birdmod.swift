@@ -21,13 +21,17 @@ struct birdmod: View { //struct寫bird加一個數字
     let birdlink2 :String //連結2
     let synthesizer = AVSpeechSynthesizer() //語音導覽
     let player = AVPlayer() //鳥叫聲
-    @State var voicestatus :Int? = 0 //語音導覽狀態
+    @State var voicestatus :Int = 0 //語音導覽狀態
+    /*
+     if global.voicestatus == 0{
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    */
     var body: some View {
         Spacer()
         ScrollView{
             VStack{
                 HStack{
-                    //鳥類名稱要改
                     Text(birdname)
                         .foregroundColor(.black)
                         .font(.system(.largeTitle, design: .rounded))
@@ -116,7 +120,7 @@ struct birdmod: View { //struct寫bird加一個數字
                         Image(birdnumber + "-" + "\(i)")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: UIScreen.main.bounds.width)
+                            .frame(width: UIScreen.main.bounds.width-25)
                         Spacer(minLength: 25)
                     }
                     /*

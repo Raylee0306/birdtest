@@ -11,7 +11,7 @@ import SwiftUI
 struct birdtestApp: App {
     var body: some Scene {
         WindowGroup {
-            birdmenu()
+            birdmenu() //.environmentObject(Global())
         }
     }
 }
