@@ -12,7 +12,7 @@ import AVFoundation
 
 
 struct birdmod: View { //struct寫bird加一個數字
-    let birdnumber :String
+    let birdnumber :String //鳥的號碼
     let birdname :String //鳥類名稱
     let birdname_ :String //鳥類別名
     let birdinfo :String //鳥類資料
@@ -20,8 +20,8 @@ struct birdmod: View { //struct寫bird加一個數字
     let birdlink1 :String //連結1
     let birdlink2 :String //連結2
     let synthesizer = AVSpeechSynthesizer() //語音導覽
-    @State private var voicestatus :Int? = 0 //語音導覽狀態
     let player = AVPlayer() //鳥叫聲
+    @State var voicestatus :Int? = 0 //語音導覽狀態
     var body: some View {
         Spacer()
         ScrollView{
