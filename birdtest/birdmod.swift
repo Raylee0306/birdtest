@@ -50,7 +50,9 @@ struct birdmod: View { //struct寫bird加一個數字
                     HStack{
                         if voicestatus == 0 {
                             Button{
-                                let utterance = AVSpeechUtterance(string: birdinfo)
+                                var birdvoice = birdinfo.replacingOccurrences(of: "\n",with: " ")
+                                birdvoice = birdvoice.replacingOccurrences(of: "•",with: " ")
+                                let utterance = AVSpeechUtterance(string: birdvoice)
                                 utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
                                 utterance.rate = 0.4
                                 synthesizer.speak(utterance)
